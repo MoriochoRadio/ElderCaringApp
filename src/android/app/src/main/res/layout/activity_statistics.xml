@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical">
+
+    <!-- 상단 바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/lightblue"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/caring_icon_white"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Caring"
+            android:textStyle=""
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/notification_icon"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/prevWeekButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/lightblue"
+                android:text="이전" />
+
+            <TextView
+                android:id="@+id/weekTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10월28일~11월3일"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:padding="8dp"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/nextWeekButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/lightblue"
+                android:text="다음" />
+        </LinearLayout>
+
+        <!-- 카드 1: 심박수 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="심박수"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:textColor="#000000" />
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/heartrate_icon"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/txtHeartRateStatistics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이번주 평균 심박수는 78BPM입니다.\n저번주보다 2BPM 증가했습니다."
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:paddingTop="4dp" />
+
+                <TextView
+                    android:id="@+id/heartRateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="안정시 심박수는 60-100BPM입니다."
+                    android:textSize="12sp"
+                    android:textColor="@color/gray"
+                    android:paddingTop="4dp" />
+                <TextView
+                    android:id="@+id/sdheartRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="양호(적정)"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray"
+                    android:paddingTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 카드 2: 수면시간 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="수면시간"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:textColor="#000000" />
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/sleep_icon"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:layout_gravity="center">
+
+
+                <TextView
+                    android:id="@+id/txtSleepStatistics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이번주 평균 수면시간은 5시간 35분입니다.\n저번주보다 20분 감소했습니다."
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:paddingTop="4dp" />
+
+                <TextView
+                    android:id="@+id/sleepDataText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="적정 수면시간은 7-8시간입니다."
+                    android:textSize="12sp"
+                    android:textColor="@color/gray"
+                    android:paddingTop="4dp" />
+                <TextView
+                    android:id="@+id/sdsleepData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="양호(적정)"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray"
+                    android:paddingTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 카드 3: 움직임 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="움직임"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:textColor="#000000" />
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/movement_icon"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:layout_gravity="center">
+
+
+                <TextView
+                    android:id="@+id/txtMovementStatistics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이번주의 평균 움직임은 임니다.\n저번주보다 감소했습니다."
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:paddingTop="4dp" />
+
+                <TextView
+                    android:id="@+id/stepsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="적정 걸음수는 평균 5000보입니다."
+                    android:textSize="12sp"
+                    android:textColor="@color/gray"
+                    android:paddingTop="4dp" />
+
+                <TextView
+                    android:id="@+id/sdsteps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="양호(적정)"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray"
+                    android:paddingTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 카드 4: 화장실 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="화장실"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:textColor="#000000" />
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/toilet_icon"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/txtToiletStatistics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이번주의 배뇨 횟수는 4번입니다.\n저번주와 동일합니다."
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:paddingTop="4dp" />
+
+                <TextView
+                    android:id="@+id/toiletText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="적정 기준은 4-6회입니다.(배뇨)"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray"
+                    android:paddingTop="4dp" />
+
+                <TextView
+                    android:id="@+id/sdtoilet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="양호(적정)"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray"
+                    android:paddingTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

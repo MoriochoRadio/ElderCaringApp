@@ -1,0 +1,41 @@
+# Build artifacts
+**/build/
+**/.gradle/
+**/.idea/
+*.iml
+local.properties
+*.apk
+*.aab
+*.aar
+*.elf
+*.hex
+
+# Firebase
+**/google-services.json
+!**/google-services.json.example
+
+# Node
+**/node_modules/
+**/npm-debug.log*
+**/yarn-error.log*
+
+# Local-only (Step 2B 정리 시 분리)
+docs/_archive/local-only/
+
+# Zip — 단 iterations 예외
+*.zip
+!docs/_archive/iterations/*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.swp
+*~
+
+# Step 보고서 (local-only 안 있어야 함 — 잘못 root 에 떨어지면 차단)
+/_step*-*.md
+/_step*.py

@@ -1,0 +1,54 @@
+{
+  "steps": {
+    "2024": {
+      "monthlyData": {
+        "11": {
+          "monthlyTotal": 62000,
+          "weeklyData": {
+            "week1": {
+              "weeklyTotal": 15000,
+              "dailyData": {
+                "2024-11-01": { "steps": 3400 },
+                "2024-11-02": { "steps": 4200 }
+              }
+            },
+            "week2": {
+              "weeklyTotal": 15500,
+              "dailyData": {
+                "2024-11-04": { "steps": 4100 },
+                "2024-11-05": { "steps": 3900 }
+              }
+            }
+          }
+        }
+      },
+      "yearlyTotal": 720000
+    }
+  },
+  "heartRate": {
+    "2024": {
+      "monthlyData": {
+        "11": {
+          "monthlyAverage": 79,
+          "weeklyData": {
+            "week1": {
+              "weeklyAverage": 82,
+              "dailyData": {
+                "2024-11-01": { "average": 78, "max": 120, "min": 60 },
+                "2024-11-02": { "average": 80, "max": 125, "min": 65 }
+              }
+            },
+            "week2": {
+              "weeklyAverage": 81,
+              "dailyData": {
+                "2024-11-04": { "average": 77, "max": 119, "min": 61 },
+                "2024-11-05": { "average": 79, "max": 123, "min": 62 }
+              }
+            }
+          }
+        }
+      },
+      "yearlyAverage": 80
+    }
+  }
+}
