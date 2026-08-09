@@ -32,7 +32,7 @@
 |---|---|---|
 | `activity_heart_rate_statistics.java` | **10 hash 변종** | 0.9.0 → 0.9.9.9 사이 6 번 진화 + caring01-08 병렬 브랜치 2 별도 hash + CURRENT |
 | `activity_movement_statistics.java` | **10 hash 변종** | 0.9.0 부터 11 번 진화 (가장 활발) |
-| `activity_sleep_time_statistics.java` | 6 hash 변종 | 0.9.0~0.9.3 stable → 0.9.5 대규모 변경 → 0.9.7~0.9.9.7 stable (10 zip 동일) → 막판 3 변종 |
+| `activity_sleep_time_statistics.java` | 6 hash 변종 | 0.9.0\~0.9.3 stable → 0.9.5 대규모 변경 → 0.9.7\~0.9.9.7 stable (10 zip 동일) → 막판 3 변종 |
 
 → **본인 톤 메시지**: *"3 통계 화면은 학기 내내 가장 자주 손이 닿은 파일들이다. UI 의 사소한 픽셀 조정부터 Firebase 경로 재설계까지, 본인 영역만은 끊임없이 수정했다."*
 
