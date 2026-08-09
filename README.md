@@ -90,6 +90,25 @@
 
 ---
 
+## 🤔 왜 이렇게 만들었나 — 기술 선택 Q&A
+
+**Q. 왜 이 4개 센서 조합인가?**
+발표에서 정의한 독거노인 생활 패턴의 4가지 단면 — 심박수·수면·움직임·배뇨 — 에 센서를 1:1 로 대응시킨 구성입니다: MAX30102 (심박), MPU-6050 (침대 뒤척임 → 수면 깊이), HC-SR501 PIR (거주 공간 움직임), HX711 로드셀 (변기/의자 착좌 시간). 스마트워치처럼 노인이 *착용·조작해야 하는 부담* 없이, 침대·변기·거주 공간에 분산 설치해 일상에서 자연스럽게 측정되도록 한 것이 시장조사 (터치케어 vs 스마트워치) 의 결론이었습니다.
+
+**Q. 왜 ESP32 를 센서당 1개씩 4개 썼나?**
+4개 센서가 각각 다른 장소 (변기/의자·손가락·침대·거실) 에 설치되어야 해서 물리적 분산이 필요했고, 각 노드가 WiFi 로 Firebase `/LiveData` 에 독립적으로 직접 업로드하는 병렬 multi-stream 구조를 하드웨어 단위에 그대로 반영한 선택입니다.
+
+**Q. 왜 Firebase (Realtime DB + Cloud Functions) 인가?**
+별도 백엔드 서버 없이 ESP32 가 `FirebaseESP32` 라이브러리로 직접 쓰고, 앱은 리스너 구독만으로 실시간 반영됩니다. 집계는 Cloud Functions 가 `/LiveData` → `/StatsData` 로 자동 계산해, 통계 화면이 raw 신호를 매번 계산하지 않고 `/StatsData` 만 읽도록 분리했습니다. 같은 학기 [SchoolbusRFID](https://github.com/MoriochoRadio/SchoolbusRFID) 에서 검증한 Firebase 실시간 패턴의 확장이기도 합니다.
+
+**Q. 왜 Android 네이티브 (Java) 인가?**
+보호자용 앱은 Android 단일 타깃이었고, 팀의 Java 학습 기반 ([study-java](https://github.com/MoriochoRadio/study-java)) 위에서 2024년 시점의 표준 스택 (AGP 8.6+, compileSdk 34) 으로 작성했습니다. 직전 학기 [MedQueue](https://github.com/MoriochoRadio/MedQueue) 가 크로스플랫폼 프레임워크 (Xamarin.Forms) 의 공식 지원 종료로 빌드 불가가 된 것과 대비되는 지점입니다.
+
+**Q. 15초·60-100 bpm 같은 임계값은 왜 그 값인가?**
+옷이 잠시 떨어지는 오탐을 걸러내는 최소 착좌 15초, 정상 심박 60–100 bpm, 권장 수면 7–9시간 등 의학적 기준 (발표 참고문헌의 의학 논문 9건) 을 코드의 임계값으로 옮긴 것입니다. 다만 로드셀은 정량 calibration (`set_scale()`) 없이 raw ADC 값 튜닝으로 임계를 정한 학부 수준의 한계가 있고, 이 역시 아래에 그대로 기록했습니다.
+
+---
+
 ## 🏗️ 시스템 설계
 
 본 프로젝트의 차별 포인트는 **하드웨어 (4 센서) + 모바일 (5 통계 화면) + 클라우드 (Firebase + Functions) 의 multi-stream 풀스택** 입니다. SchoolbusRFID 의 *"RFID 단일 신호 → Android 3-role"* 패턴을 **"4 센서 multi-stream → Android 5 통계 화면 + Cloud Functions 집계"** 로 확장.
