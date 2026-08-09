@@ -1,5 +1,7 @@
 # ElderCaringApp — 독거노인 건강 모니터링 시스템
 
+🇰🇷 한국어 · 🇬🇧 [English](README.en.md)
+
 > 독거노인의 일상 (앉기·심박·움직임·화장실 사용) 을 **로드셀(HX711) + MAX30102 심박 + MPU-6050 자이로 + HC-SR501 PIR 4 개 센서를 동시에 묶어** 측정하고, 보호자가 *떨어져 있어도 가까이 있는 것처럼* 상태를 실시간으로 확인할 수 있게 만들어 본 학부 팀 프로젝트입니다. 2024-2 학기 의료IT공학과 *"설계 및 프로젝트 기본 II"* 의 **재설계 단계** — 같은 학기 같은 과목의 [SchoolbusRFID](https://github.com/MoriochoRadio/SchoolbusRFID) (역설계) 다음에 진행한 4 인 팀 프로젝트입니다.
 
 ![Status](https://img.shields.io/badge/status-preserved-blue) ![Year](https://img.shields.io/badge/year-2024--2-blue) ![Platform](https://img.shields.io/badge/platform-Android%20%2B%20ESP32-success) ![Stack](https://img.shields.io/badge/Android%20Native-Java-orange) ![Backend](https://img.shields.io/badge/Firebase-Realtime%20DB%20%2B%20Functions-yellow) ![Hardware](https://img.shields.io/badge/sensors-HX711%20%2B%20MAX30102%20%2B%20MPU--6050%20%2B%20PIR-red)
