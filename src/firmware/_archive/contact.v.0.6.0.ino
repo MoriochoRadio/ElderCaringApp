@@ -19,7 +19,7 @@
 #define firebaseHost "wearable-e1302-default-rtdb.firebaseio.com"
 #define firebaseAuth "<FIREBASE_AUTH_SECRET>"
 //#define firebaseHost "wearable-dataset-default-rtdb.firebaseio.com"
-//#define firebaseAuth "ADXySkfRTR2FoogN0hkLjmrkq0ajRJonlpSnOZq0"
+//#define firebaseAuth "<FIREBASE_AUTH_SECRET>"
 
 FirebaseData firebaseData;
 FirebaseConfig config;

@@ -11,11 +11,11 @@
 
 // Wi-Fi 설정
 const char* ssid = "<YOUR_WIFI_SSID>";           // Wi-Fi 네트워크 이름
-const char* password = "05120302";    // Wi-Fi 비밀번호
+const char* password = "<YOUR_WIFI_PASSWORD>";    // Wi-Fi 비밀번호
 
 // Firebase 설정
 #define FIREBASE_HOST "wearable-dataset-default-rtdb.firebaseio.com" // Firebase 호스트
-#define FIREBASE_AUTH "ADXySkfRTR2FoogN0hkLjmrkq0ajRJonlpSnOZq0"      // Firebase 인증 키
+#define FIREBASE_AUTH "<FIREBASE_AUTH_SECRET>"      // Firebase 인증 키
 
 // 핀 설정
 const int pirPin = 14;     // PIR 센서가 연결된 핀 (예: GPIO 14)

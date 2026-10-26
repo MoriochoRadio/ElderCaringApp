@@ -17,7 +17,7 @@
 #define ssid "<YOUR_WIFI_SSID>"
 #define password "<YOUR_WIFI_PASSWORD>"
 #define firebaseHost "wearable-dataset-default-rtdb.firebaseio.com"
-#define firebaseAuth "ADXySkfRTR2FoogN0hkLjmrkq0ajRJonlpSnOZq0"
+#define firebaseAuth "<FIREBASE_AUTH_SECRET>"
 
 FirebaseData firebaseData;
 FirebaseConfig config;
